@@ -1,0 +1,169 @@
+.header {
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    background: #f3f3f3 linear-gradient(to right, #f3f3f3 0%, #f3f3f3 8%, white 100%);
+}
+
+// ----------- header top -------------- //
+
+.header__top {
+    width: 100%;
+    padding: 7px 0;
+    background: #202020;
+}
+
+.header__left {
+    width: 50%;
+    float: left;
+
+    @include phones {
+        width: 70%;
+    }
+}
+
+.header__right {
+     width: 50%;
+     float: right;
+     text-align: right;
+     @include clearfix;
+
+     @include phones {
+        width:29%;
+        text-align: center;
+     }
+ }
+
+.phone {
+    @include inlineblock(middle);
+    font: 12px/14px $RL;
+    color: snow;
+    text-decoration: none;
+
+    &:before {
+        content: '';
+        @include inlineblock(middle);
+        margin-right: 11px;
+        @include sprite($phone);
+
+        @include laptop {
+            display: none;
+        }
+    }
+}
+
+// ----------- header bottom -------------- //
+
+.header__bottom {
+    padding: 23px 0;
+
+    @include phones {
+        .header__left,
+        .header__right {
+            width: 100%;
+        }
+    }
+}
+
+.user {
+    width: 460px;
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include laptop {
+        width: 100%;
+    }
+
+    .btn_login,
+    .btn_register,
+    .btn_black {
+        height: 30px;
+    }
+}
+
+.cart {
+    margin-right: 40px;
+    padding: 6px 0;
+    @include inlineblock(bottom);
+
+    &:before {
+        content: '';
+        @include inlineblock(bottom);
+        margin-right: 11px;
+        @include sprite($cart);
+
+        @include laptop {
+            background-position: 0 1.1rem;
+            background-size: cover;
+        }
+    }
+
+    &__link {
+        font: 13px/15px $RR;
+        color: $grey;
+        text-transform: capitalize;
+        text-decoration: none;
+        position: relative;
+
+        &:before, &:after {
+            display: block;
+            position: absolute;
+            top: 3px;
+
+        }
+
+        &:before {
+            content: attr(data-count);
+            right: -22px;
+        }
+
+        &:after {
+            content: attr(data-money);
+            right: -40px;
+        }
+    }
+}
+
+.btn_black {
+    font-family: $RB;
+    color: #fff;
+    background: $black;
+    transition: .3s;
+
+    &:hover {
+        color: #000;
+        background: #fff;
+        border: 1px solid $black;
+    }
+}
+
+.search {
+    width: 100%;
+    margin-top: 14px;
+    position: relative;
+
+    &__form-input {
+        width: 100%;
+        padding: 12px 60px 11px 22px;
+        font: 13px/15px $RL;
+        border: 1px solid #e5e4e2;
+        background-color: transparent;
+        outline: 0;
+        &::-webkit-input-placeholder {
+    		color: $grey;
+    	}
+    }
+
+    &__form-submit {
+        width: 44px;
+        height: 40px;
+        border: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        background: url(../img/search.png) no-repeat center center;
+        outline: none;
+    }
+}

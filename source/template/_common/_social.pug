@@ -1,0 +1,14 @@
+.social
+    - 
+        var items = [
+            {name: "Facebook", link: "https://facebook.com", url: "fa fa-facebook"},
+            {name: "Twitter", link: "https://twitter.com", url: "fa fa-twitter"},
+            {name: "Instagram", link: "https://www.instagram.com/", url: "fa fa-instagram"},
+            {name: "RSS", link: "https://www.rss.com/", url: "fa fa-rss"},
+            {name: "Pinterest", link: "https://www.pinterest.com/", url: "fa fa-pinterest"}
+        ]
+    ul.social__list
+        each item in items
+            li(class="social__item" + ((item == "Наш блог") ? ' ' + 'active' : ''))
+                a.social__link(href="" + item.link target="_blank") #{item.name}
+                    i( class="" + item.url aria-hidden="true")

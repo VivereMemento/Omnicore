@@ -1,0 +1,25 @@
+.brands {
+    margin-bottom: 35px;
+    padding-top: 45px;
+    padding-bottom: 135px;
+    background: #f3f3f3 linear-gradient(to right, #f3f3f3 0%, #f3f3f3 8%, white 100%);
+
+    &__list {
+        margin-top: 90px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__item {
+        margin-right: 15px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__img {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,191 @@
+.arrivals {
+    margin-bottom: 35px;
+    padding-top: 45px;
+    padding-bottom: 40px;
+    background: #f3f3f3 linear-gradient(to right, #f3f3f3 0%, #f3f3f3 8%, white 100%);
+
+    &__content {
+        margin-top: 60px;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        @include phones {
+            width: 65%;
+            margin: 0 auto;
+        }
+    }
+
+    &__item {
+        width: 21%;
+        height: 460px;
+        margin-bottom: 30px;
+        position: relative;
+
+        @include tablets {
+            height: 350px;
+        }
+
+        @include phones {
+            width: 100%;
+            height: inherit;
+        }
+
+        &:hover .arrivals__item-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 99999;
+            background-color: white;
+            box-shadow: 0 0 0 15px #fff, -1px 1px 19px 15px #7b7b7b;
+        }
+
+        &:hover .arrivals__size {
+            display: block;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        font-family: $Rblack;
+        color: $black;
+        text-transform: uppercase;
+    }
+
+    &__img {
+        max-width: 100%;
+    }
+}
+
+.description {
+    padding-top: 10px;
+    padding-bottom: 5px;
+
+    &-text {
+        padding-right: 106px;
+        font: 14px/16px $Rblack;
+        color: #000;
+        text-transform: uppercase;
+
+        @include tablets {
+            padding-right: 50px;
+        }
+    }
+
+    &-price {
+        display: inline-block;
+        margin-top: 7px;
+        font-size: 16px;
+        font-family: $RR;
+        color: #000;
+        position: relative;
+
+        &:before {
+            display: inline-block;
+            content: attr(data-sale);
+            color: #7b7b7b;
+        }
+
+        &_color {
+            color: #ff0024;
+
+            &:before {
+                margin-right: 20px;
+            }
+
+            &:after {
+                display: inline-block;
+                content: '';
+                width: 45%;
+                height: 1px;
+                background: #7b7b7b;
+                transform: rotate(-13deg);
+                position: absolute;
+                top: 7px;
+                left: -3px;
+            }
+        }
+    }
+}
+
+.arrivals__size {
+    text-align: center;
+    display: none;
+
+    &-text {
+        display: inline-block;
+        margin-right: 25px;
+        padding-top: 8px;
+        font-family: $RR;
+        color: #000;
+    }
+
+    &-list {
+        display: inline-block;
+        font-size: 0;
+        border: 1px solid #e1e1e1;
+    }
+
+    &-item {
+        display: inline-block;
+        border-right: 1px solid #e1e1e1;
+        font-size: 14px;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    &-link {
+        display: block;
+        padding: 4px 18px;
+        text-decoration: none;
+        font-family: $RB;
+        color: #000;
+
+        &:hover {
+            color: #fff;
+            background: #000;
+            outline: 1px solid #000;
+        }
+    }
+
+    .btn_buy {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+        padding: 16px 0;
+        font-family: $Rblack;
+        color: #fff;
+        background: #000;
+        position: relative;
+        overflow: hidden;
+
+        &:after {
+            display: block;
+            content: 'buy';
+            width: 0%;
+            height: 100%;
+            padding-top: 16px;
+            background: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: .3s;
+            text-indent: -30px;
+        }
+
+        &:hover {
+            border: 1px solid transparent;
+            color: #000;
+        }
+
+        &:hover.btn_buy:after {
+            width: 100%;
+            text-indent: 0;
+        }
+    }
+}

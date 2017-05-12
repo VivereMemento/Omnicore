@@ -1,0 +1,21 @@
+.logo {
+    display: block;
+    max-width: 200px;
+    margin-left: 17px;
+    margin-top: 21px;
+
+    @include phones {
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        position: absolute;
+        top: 0;
+        left: -9999px;
+    }
+
+    &__pic {
+        max-width: 100%;
+    }
+}

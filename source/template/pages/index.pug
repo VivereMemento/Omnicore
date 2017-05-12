@@ -1,0 +1,100 @@
+extends ../_template
+
+block variables
+  - var title = 'Home'
+
+block content
+    section.slideshow
+        .container
+            -
+                var promo = [
+                    {url: "./assets/img/slide_1.jpg", id: "slide"},
+                    {url: "./assets/img/slide_1.jpg", id: "slide"},
+                    {url: "./assets/img/slide_1.jpg", id: "slide"},
+                    {url: "./assets/img/slide_1.jpg", id: "slide"}
+                ]
+            +slideshow(promo, "slideshow")
+
+    section.arrivals
+        .container
+            .heading
+                h2.heading__text New arrivals
+            .arrivals__content
+                +arrivals-products
+
+    section.brands
+        .container
+            .heading
+                h2.heading__text Brands
+            -
+                var items = [
+                    "./assets/img/brand-1.png",
+                    "./assets/img/brand-2.png",
+                    "./assets/img/brand-3.png",
+                    "./assets/img/brand-4.png",
+                    "./assets/img/brand-5.png",
+                    "./assets/img/brand-6.png"
+                ]
+            ul.brands__list
+                each item in items
+                    li.brands__item
+                        img.brands__img(src="" + item alt="brands-pic")
+
+    section.wall
+        .wall__left
+            img.wall__pic(src="./assets/img/wallpaper.jpg" alt="wall-pic")
+        .wall__right
+            -
+                var wallProduct = [
+                        {url: "./assets/img/wall-product-1.jpg", text: "skirt diesel", price: "$5 520",  sale: ""}
+                    ]
+            .wall__slideshow_mods
+                +slideshow(wallProduct)
+            
+    section.news
+        .container
+            .heading
+                .heading__text News
+
+                -
+                    var items = [
+                        {img: "./assets/img/news-1.jpg", place: "Stone Clad", date: "27.01.2017", tittle: "We added many things you may like"},
+                        {img: "./assets/img/news-2.jpg", place: "Stone Clad", date: "27.01.2017", tittle: "We added many things you may like"},
+                        {img: "./assets/img/news-3.jpg", place: "Stone Clad", date: "27.01.2017", tittle: "We added many things you may like"}
+                    ]
+
+                ul.news__list
+                    each item in items
+                        li.news__item
+                            figure.news__img-wrap
+                                img.news__img(src="" + item.img)
+                                figcaption.news__content
+                                    .news__place #{item.place}
+                                    .news__date #{item.date}
+                                    .news__tittle #{item.tittle}
+                                    .news__text
+                                        +news-text(item.tittle)
+                                    a.btn.btn_black(href="#") Learn more
+
+    section.contacts
+        .container
+            .heading
+                .heading__text Contact us
+            .contacts__form
+                form#contact-me.form(method="post", action="/send")
+                    .form__item.form__item_name
+                        label.form__label(for="mail-name") Name
+                        input.form__input(type="text", placeholder="* Name", id="mail-name", name="name")
+                    .form__item.form__item_surname
+                        label.form__label(for="mail-name") Surname
+                        input.form__input(type="text", placeholder="* Surname", id="mail-surname", name="name")
+                    .form__item
+                        label.form__label(for="mail-email") Email
+                        input.form__input(type="text", placeholder="* Email", id="mail-email", name="email")
+                    .form__item.form__item_textarea
+                        label.form__label(for="mail-message") Message
+                        textarea.form__input(placeholder="Message", name="message", id="mail-message")
+                .form__btn
+                    +checkbox('I agree')
+                    +checkbox('Send me news')
+                    input.btn.btn_black(type="submit", value="Send", form="contact-me")

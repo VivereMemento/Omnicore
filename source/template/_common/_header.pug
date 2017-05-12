@@ -1,0 +1,25 @@
+header.header
+    .header__top
+        .container
+            .header__left
+                include ./_menu
+            .header__right
+                a.phone(href="tel: 123 456 78 90") Call us: 123 456 78 90
+    .header__bottom
+        .container
+            .header__left
+                a.logo(href="#")
+                    img.logo__pic(src="assets/img/logo.png")
+                    .logo__text Star clothes
+            .header__right
+                .user
+                    a.btn.btn_login(href="#") Login
+                    a.btn.btn_register(href="#") Register
+                    .cart
+                        a.cart__link(href="#" data-count="(0):" data-money="$0") My cart
+                    a.btn.btn_black(href="#") Checkout
+                    .search
+                        form.search__form
+                            input.search__form-input(name="" type="text" placeholder="Search")
+                            input.search__form-submit(name="" type="submit" value="")
+    include ./_navigation

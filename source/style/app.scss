@@ -1,0 +1,68 @@
+$responsive: true;
+
+/* --------- variables --------- */
+$RR: 'roboto-regular', sans-serif;
+$RL: 'roboto-light', sans-serif;
+$RB: 'roboto-bold', sans-serif;
+$Rblack: 'roboto-black', sans-serif;
+
+$grey: #3f3d3d;;
+$black: #000000;
+
+/* --------- common classes --------- */
+
+.heading {
+    text-align: center;
+
+    &__text {
+        margin: 0;
+        font: 37px/39px $Rblack;
+        color: #1a2631;
+        text-shadow: -1.8px 3.6px 3.3px rgba(0, 0, 2, 0.14);
+        text-transform: uppercase;
+        letter-spacing: 5px;
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 7px 19px;
+    font: 13px/15px $RR;
+    color: $grey;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid #e5e4e2;
+    }
+}
+
+
+/* --------- adjustment --------- */
+
+@import "_misc/mixins";
+@import "_misc/fonts";
+@import "_misc/adjustment";
+@import "_misc/_sprite";
+
+/* --------- common --------- */
+
+@import "_common/_header";
+@import "_common/_footer";
+@import "_common/_navigation";
+@import "_common/_menu";
+@import "_common/_social";
+@import "_common/_logo";
+@import "_common/_slideshow";
+@import "_common/_checkbox";
+
+/* --------- sections --------- */
+
+// @import "sections/**/*";
+@import "_sections/_arrivals";
+@import "_sections/_brands";
+@import "_sections/_wall";
+@import "_sections/_news";
+@import "_sections/_contacts";

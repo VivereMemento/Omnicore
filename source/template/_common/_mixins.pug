@@ -1,0 +1,105 @@
+
+//- ----------- arrivals -------------- //
+
+mixin arrivals-products()
+    -
+        var items = [
+            {img: "./assets/img/product-1.jpg", text: "Extra mini summer by Oleandr Scott", price: "$32 520", sale: ""},
+            {img: "./assets/img/product-1.jpg", text: "Платье diesel", price: "$ 5 520", sale: ""},
+            {img: "./assets/img/product-1.jpg", text: "Платье diesel", price: "$ 5 520", sale: ""},
+            {img: "./assets/img/product-1.jpg", text: "Платье diesel", price: "$ 5 520", sale: ""},
+            {img: "./assets/img/product-1.jpg", text: "Платье diesel", price: "$ 5 520", sale: ""},
+            {img: "./assets/img/product-1.jpg", text: "Платье diesel", price: "$ 5 520", sale: "6 500"},
+            {img: "./assets/img/product-1.jpg", text: "Платье diesel", price: "$ 5 520", sale: ""},
+            {img: "./assets/img/product-1.jpg", text: "Платье diesel", price: "$ 5 520", sale: ""},
+            {img: "./assets/img/product-1.jpg", text: "Платье diesel", price: "$ 5 520", sale: ""},
+            {img: "./assets/img/product-1.jpg", text: "Платье diesel", price: "$ 5 520", sale: "6 500"},
+            {img: "./assets/img/product-1.jpg", text: "Платье diesel", price: "$ 5 520", sale: ""},
+            {img: "./assets/img/product-1.jpg", text: "Платье diesel", price: "$ 5 520", sale: ""}
+        ]
+    ul.arrivals__list
+        each item in items
+            li.arrivals__item
+                .arrivals__item-inner
+                    a.arrivals__link(href="#")
+                        figure.arrivals__img-wrap
+                            img.arrivals__img(src="" + item.img)
+                            figcaption.description
+                                .description-text #{item.text}
+                                .description-price(data-sale="" + item.sale class="" + ((item.sale !== "") ? 'description-price_color' + '' : '')) #{item.price}
+                    .arrivals__size
+                        - var numbers = ["1", "2", "3", "4"]
+                        .arrivals__size-text size
+                        ul.arrivals__size-list
+                            each number in numbers
+                                li.arrivals__size-item
+                                    a.arrivals__size-link(href="#") #{number}
+                        a.btn.btn_buy(href="#") Buy
+
+//- ----------- news -------------- //
+
+mixin news-text(tittle)
+    if tittle == 'We added many things you may like'
+        a.news__link(href="#") 
+            | It is a long established fact that a reader will be distracted
+    if tittle == 'We added many things you may'
+        a.news__link(href="#")
+            | It is a long established fact that a reader will be distracted. It is a long established fact that a reader will be distracted
+            
+    if tittle == 'We added many things you'
+        a.news__link(href="#")
+            | It is a long established fact that a reader will be distracted. It is a long established fact that a reader will be distracted. It is a long established fact that a reader will be distracted
+
+//- ----------- checkbox -------------- //
+
+mixin checkbox(text)
+    label.checkbox
+        input.checkbox__input(name="location" type="radio")
+        .checkbox__elem
+        .checkbox__text= text
+
+//- ----------- menu -------------- //
+
+mixin menu(array, classes)
+    ul(class="menu__list " + classes)
+        each item in array
+            li(class="menu__item")
+                a(class="menu__link" href="#")=item
+                
+//- ----------- menu -------------- //
+
+mixin slideshow(array, id)
+    .slideshow__display
+        if array == promo
+            .slideshow__promo
+                .slideshow__promo-inner
+                    .slideshow__promo-season Mid-season
+                    .slideshow__promo-sale sale
+                    .slideshow__promo-upto 
+                        span.slideshow__promo-up up
+                        span.slideshow__promo-to to
+                    .slideshow__promo-off 50 <span class="persent">%</span> off
+                .slideshow__btn
+                    a.btn.btn_promo(href="#") Shop now
+        
+        ul(id="" + (id !== "") ? id : "").slideshow__list
+            each item in array
+                li.slideshow__item.fade
+                    img.slideshow__img(src="" + item.url alt="slide")
+                    if array == wallProduct
+                        .description.wall__description_mods
+                            .description-text #{item.text}
+                            .description-price(data-sale="" + item.sale class="" + ((item.sale !== "") ? 'description-price_color' + '' : '')) #{item.price}
+        if array == promo    
+            div.dots
+                span(class="dot")
+                span(class="dot")
+                span(class="dot")
+                span(class="dot")
+                    
+        if array == wallProduct    
+            div.dots.wall__dots_mods
+                span(class="dot active")
+                span(class="dot")
+                span(class="dot")
+                span(class="dot")

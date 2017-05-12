@@ -1,0 +1,96 @@
+.news {
+    margin-bottom: 35px;
+    padding-top: 45px;
+    padding-bottom: 60px;
+    background: #f3f3f3 linear-gradient(to right, #f3f3f3 0%, #f3f3f3 8%, white 100%);
+
+    &__list {
+        margin-top: 45px;
+        display: flex;
+        justify-content: space-between;
+
+        @include phones {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__item {
+        width: 32%;
+
+        @include phones {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__img {
+        max-width: 100%;
+    }
+
+    &__content {
+        padding-top: 15px;
+        text-align: left;
+        color: #000;
+    }
+
+    &__place, &__date {
+        display: inline-block;
+        margin-right: 27px;
+        font: 13px/15px $RR;
+        color: #6c6c6c;
+        letter-spacing: 2px;
+
+        &:before {
+            content: '';
+            @include inlineblock(top);
+            margin-right: 11px;
+
+        }
+    }
+
+    &__place:before {
+        @include sprite($pencil);
+
+        @include laptop {
+            background-size: cover;
+            background-position: 0 1.8rem;
+        }
+    }
+
+    &__date:before {
+        @include sprite($calendar);
+
+        @include laptop {
+            background-size: cover;
+            background-position: 0 -0.7rem;
+        }
+    }
+
+    &__tittle {
+        margin-top: 13px;
+        font-family: $RB;
+        color: #1a2631;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        margin-top: 5px;
+        margin-bottom: 25px;
+    }
+
+    &__link {
+        font-family: $RR;
+        color: #6c6c6c;
+        line-height: 21px;
+        letter-spacing: 2px;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .btn_black {
+        padding: 7px 14px;
+    }
+}

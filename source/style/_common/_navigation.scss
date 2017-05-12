@@ -1,0 +1,67 @@
+.nav {
+    position: relative;
+
+    @include phones {
+        height: 37px;
+        overflow: hidden;
+    }
+
+    &.open {
+        height: inherit;
+    }
+
+    &__trigger {
+        padding: 10px 0;
+        font-size: 16px;
+        color: #000;
+        text-transform: uppercase;
+        text-align: center;
+        background: #c0c0c0;
+        display: none;
+
+        @include phones {
+            display: block;
+        }
+    }
+
+    &__list {
+        display: inline-block;
+        background-color: #f4f4f4;
+        font-size: 0;
+
+        @include phones {
+            width: 100%;
+        }
+    }
+
+    &__item {
+        display: inline-block;
+
+        @include phones {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        &.active .nav__link {
+            background: #e4e4e4;
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: 10px 32px;
+        font: 16px/18px $RL;
+        color: #3f3d3d;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover {
+            background: #e4e4e4;
+        }
+
+        @include laptop {
+            font-size: 12px;
+        }
+    }
+}

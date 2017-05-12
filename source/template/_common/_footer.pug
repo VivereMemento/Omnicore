@@ -1,0 +1,56 @@
+footer.footer
+    .container
+        .footer__inner
+            .footer__blocks
+                .footer__tittle Shops
+                -
+                    var shops = [
+                            "New in",
+                            "Women",
+                            "Men",
+                            "Shoes",
+                            "Bags & Accessories",
+                            "Top Brands",
+                            "Sale & Special Offers",
+                            "Lookbook"
+                        ]
+                +menu(shops, 'footer__menu_mods')
+
+            .footer__blocks
+                .footer__tittle Information
+                -
+                    var information = [
+                            "About us",
+                            "Customer Server",
+                            "New Collection",
+                            "Best Sellers",
+                            "Manufactures",
+                            "Privacy policy",
+                            "Terms & condition",
+                            "Blog"
+                        ]
+                +menu(information, 'footer__menu_mods')
+
+            .footer__blocks
+                .footer__tittle Customer service
+                -
+                    var customers = [
+                    "Search Terms",
+                    "Advanced Search",
+                    "Orders and Returns",
+                    "Contact Us",
+                    "RSS",
+                    "Help & FAQs",
+                    "Consultant",
+                    "Store Locations"
+                        ]
+                +menu(customers, 'footer__menu_mods')
+            .footer__blocks
+                .footer__tittle Stay connected
+                include ./_social
+                .subscribe
+                    | Subscribe <span>in</span> our news letter
+                    form.subscribe__form
+                        input.subscribe__form-input(name="" type="text" placeholder="Enter your email address")
+                        input.subscribe__form-submit(name="" type="submit" value="Subscribe")
+            

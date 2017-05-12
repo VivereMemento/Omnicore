@@ -1,0 +1,9 @@
+nav.nav
+	.container
+		- 
+			var items = ["Home", "New arrivals", "Tuxedo", "Sweater", "Shoes", "Classes", "T-shirt", "Watches"];
+		.nav__trigger Menu
+		ul.nav__list
+			each item in items
+				li(class="nav__item" + ((item == "Home") ? ' ' + 'active' : ''))
+					a(href="#" class="nav__link") #{item}

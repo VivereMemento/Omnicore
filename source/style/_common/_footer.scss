@@ -1,0 +1,104 @@
+.footer {
+    padding: 50px 0;
+    background-color: #141414;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+
+        @include phones {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__blocks {
+        @include phones {
+            width: 100%;
+            order: 2;
+        }
+
+        &:last-child {
+            @include phones {
+                margin-bottom: 20px;
+                order: 1;
+            }
+        }
+    }
+
+    &__tittle {
+        margin-bottom: 43px;
+        font: 16px/18px $Rblack;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    &__menu_mods {
+
+        .menu__item {
+            display: block;
+            margin-bottom: 14px;
+
+            @include phones {
+                display: inline-block;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .menu__link {
+            font-family: $RR;
+            color: #737373;
+            font-size: 14px;
+        }
+    }
+}
+
+.subscribe {
+    @extend .footer__tittle;
+    word-spacing: 5px;
+    margin-bottom: 0;
+    margin-top: 45px;
+
+    span {
+        text-transform: lowercase;
+    }
+
+    &__form {
+        width: 360px;
+        height: 40px;
+        margin-top: 54px;
+        position: relative;
+
+        &-input {
+            width: 100%;
+            height: 100%;
+            padding: 15px 120px 15px 22px;
+            font: 12px/14px $RR;
+            color: #6a6a6a;
+            border: 1px solid $grey;
+            background: transparent;
+            outline: 0;
+        }
+
+        &-submit {
+            width: 100px;
+            height: 34px;
+            border: none;
+            font: 12px/14px $RR;
+            color: #fff;
+            text-transform: uppercase;
+            background-color: #323030;
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            cursor: pointer;
+            outline: 0;
+
+            &:hover {
+                background: #730808;
+            }
+        }
+    }
+}
