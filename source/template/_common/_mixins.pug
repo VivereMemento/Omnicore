@@ -91,14 +91,14 @@ mixin slideshow(array, id)
                             .description-text #{item.text}
                             .description-price(data-sale="" + item.sale class="" + ((item.sale !== "") ? 'description-price_color' + '' : '')) #{item.price}
         if array == promo    
-            div.dots
+            div#dots-promo.dots
                 span(class="dot")
                 span(class="dot")
                 span(class="dot")
                 span(class="dot")
                     
         if array == wallProduct    
-            div.dots.wall__dots_mods
+            div#dots-wall.dots.wall__dots_mods
                 span(class="dot active")
                 span(class="dot")
                 span(class="dot")

@@ -16,6 +16,4 @@
       }
   }
 
-  var slideIndex = 0;
-
 })();
